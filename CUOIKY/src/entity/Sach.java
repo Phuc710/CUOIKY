@@ -1,7 +1,7 @@
 package entity;
 
 import java.util.Date;
-
+import java.text.SimpleDateFormat;
 public abstract class Sach {
 	// field
 	protected String maSach;
@@ -9,6 +9,7 @@ public abstract class Sach {
 	protected double donGia;
 	protected int soLuong;
 	protected String nhaxb;
+	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
 
 	// constructor
 	public Sach() {
@@ -22,7 +23,7 @@ public abstract class Sach {
 		this.soLuong = soLuong;
 		this.nhaxb = nhaxb;
 	}
-
+	//da hinh
 	public abstract double tinhTien();
 
 	public String getMaSach() {
@@ -39,8 +40,13 @@ public abstract class Sach {
 
 	@Override
 	public String toString() {
-		return "Sach{" + "maSach='" + maSach + '\'' + ", ngayNhap=" + ngayNhap + ", donGia=" + donGia + ", soLuong="
-				+ soLuong + ", nhaXuatBan='" + nhaxb + '\'' + '}';
+	    return
+	            "maSach = " + maSach +
+	            ", ngayNhap = " + dateFormat.format(ngayNhap) +
+	            ", donGia = " + donGia + " VND"+
+	            ", soLuong = " + soLuong +
+	            ", nhaXuatBan = " + nhaxb          
+	            ;
 	}
 
 }

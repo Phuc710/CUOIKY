@@ -63,12 +63,12 @@ public class MenuCUI {
 		inlistsachcontrol.getlistsach();
 	}
 
-	private void help() {
-		screenOutput.println("~~~~~~~~~~Console Help Menu~~~~~~~~~");
-		screenOutput.println("[HELP] - Ho tro su dung phan mem");
-		screenOutput.println("[THEM] - Them moi sinh vien");
-		screenOutput.println("[IN] - In danh sach sinh vien");
-		screenOutput.println("[EXIT] - In danh sach sinh vien");
-		screenOutput.println("~~~~~~~~~~Console Help Menu~~~~~~~~~");
+	public void help() {
+	    screenOutput.println("~~~~~~~~~~Console Help Menu~~~~~~~~~");
+	    screenOutput.println("[HELP] - Ho tro su dung phan mem");
+	    screenOutput.println("[THEM] - Them moi sach");
+	    screenOutput.println("[IN] - In danh sach sach");
+	    screenOutput.println("[EXIT] - Thoat chuong trinh");
+	    screenOutput.println("~~~~~~~~~~Console Help Menu~~~~~~~~~");
 	}
 }

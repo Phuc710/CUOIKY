@@ -28,18 +28,18 @@ public class ThemSachControl {
 	}
 	//sachGK
 	public void themSach(String maSach, Date ngayNhap, double donGia, int soLuong, String nhaxb, String tinhTrang) {
-		SachGK sgk = new SachGK();
+		SachGK sgk = new SachGK(maSach, ngayNhap, donGia, soLuong, nhaxb, tinhTrang);
 		doThemSach(sgk);
 	}
 	//sachTK
 	public void themSach(String maSach, Date ngayNhap, double donGia, int soLuong, String nhaxb, double thue) {
-		SachTK stk = new SachTK();
+		SachTK stk = new SachTK(maSach, ngayNhap, donGia, soLuong, nhaxb, thue);
 		doThemSach(stk);
 	}
 	
 	// da hinh
 	public void doThemSach(Sach sach) {
 		themSachDAO.addSach(sach);
-		thongBaoThemSachCUI.inThongBao("THEM "+ sach +" THANH CONG !!!");		
+		thongBaoThemSachCUI.inThongBao("THEM SACH THANH CONG !!!");		
 	}
 }

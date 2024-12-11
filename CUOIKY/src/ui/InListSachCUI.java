@@ -10,7 +10,7 @@ public class InListSachCUI {
 	}
 	public void inlistsach(ArrayList<Sach> listsach) {
 		for(Sach sach : listsach) {
-			sach.toString;
+			screenOutput.println(sach.toString());
 		}
 	}
 }

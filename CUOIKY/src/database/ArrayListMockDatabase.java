@@ -12,13 +12,15 @@ public class ArrayListMockDatabase {
 	
 	public static void initDatabase() {
 		database = new ArrayList<Sach>();
-		insertSach(new SachTK("TK001",null,10,1,"abc",3));
-		insertSach(new SachGK("GK001",null,10,1,"abc","moi"));
+		
 	}
 	public static void insertSach(Sach sach) {
 		database.add(sach);
 	}
 	public static ArrayList<Sach> GetallSach(){
+		if (database == null) {
+	        initDatabase();
+	    }
 		return database;
 	}
 }

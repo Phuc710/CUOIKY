@@ -38,21 +38,21 @@ public class ThongTinSachCUI {
 	public void nhapThongTinSach() {
 		screenOutput.print(loaiSachPrompt);
         screenOutput.flush();
-        String loaiSach = keyBoardInput.nextLine();
+        String loaiSach = keyBoardInput.nextLine().toUpperCase();
         
 		screenOutput.print(maSachPrompt);
 		screenOutput.flush();
 		String maSach = keyBoardInput.nextLine();
 
 		screenOutput.print(ngayNhapPrompt);
-		screenOutput.flush();
-		String ngayNhapStr = keyBoardInput.nextLine();
-		Date ngayNhap = null;
-		try {
-			ngayNhap = simpleFormat.parse(ngayNhapStr);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+	    screenOutput.flush();
+	    String ngayNhapStr = keyBoardInput.nextLine();
+	    Date ngayNhap = null;
+	    try {
+	        ngayNhap = simpleFormat.parse(ngayNhapStr);
+	    } catch (ParseException e) {
+	    	e.printStackTrace();
+	    }
 
 		screenOutput.print(donGiaPrompt);
 		screenOutput.flush();

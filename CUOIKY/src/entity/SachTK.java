@@ -21,7 +21,7 @@ public class SachTK extends Sach {
 
 	@Override
 	public String toString() {
-		return "SachThamKhao{" + super.toString() + ", thue=" + thue + '}';
+		return "SachThamKhao[" + super.toString() + ", thue = " + thue + "]";
 	}
 
 }

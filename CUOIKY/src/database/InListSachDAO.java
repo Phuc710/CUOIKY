@@ -7,6 +7,9 @@ public class InListSachDAO {
 		// TODO Auto-generated constructor stub
 	}
 	public ArrayList<Sach> GetallSach(){
+		if (ArrayListMockDatabase.database == null) {
+	        ArrayListMockDatabase.initDatabase();
+	    }
 		return ArrayListMockDatabase.GetallSach();
 	}
 }
