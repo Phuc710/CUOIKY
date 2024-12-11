@@ -17,7 +17,7 @@ public class ThemSachControl {
 		// TODO Auto-generated constructor stub
 	}
 	
-	//setter
+	//setter xuat thong bao
 	
 	public void setthongBaoThemSachCUI(ThongBaoThemSachCUI thongBaoThemSachCUI) {
 		this.thongBaoThemSachCUI = thongBaoThemSachCUI;
@@ -40,7 +40,6 @@ public class ThemSachControl {
 	// da hinh
 	public void doThemSach(Sach sach) {
 		themSachDAO.addSach(sach);
-		thongBaoThemSachCUI.inThongBao("THEM SACH THANH CONG !!!");		
+		thongBaoThemSachCUI.inThongBao("THEM "+ sach +" THANH CONG !!!");		
 	}
-
 }

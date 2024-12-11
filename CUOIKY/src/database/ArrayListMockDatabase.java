@@ -7,7 +7,7 @@ import entity.SachTK;
 import entity.SachGK;
 
 public class ArrayListMockDatabase {
-	
+	// da hinh
 	public static ArrayList<Sach> database = null;
 	
 	public static void initDatabase() {
