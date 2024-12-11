@@ -7,7 +7,9 @@ import entity.SachTK;
 import entity.SachGK;
 
 public class ArrayListMockDatabase {
+	
 	public static ArrayList<Sach> database = null;
+	
 	public static void initDatabase() {
 		database = new ArrayList<Sach>();
 		insertSach(new SachTK("TK001",null,10,1,"abc",3));

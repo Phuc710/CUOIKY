@@ -70,20 +70,18 @@ public class ThongTinSachCUI {
 		if ("GK".equalsIgnoreCase(loaiSach)) {
             screenOutput.print(tinhTrangPrompt);
             screenOutput.flush();
-            String tinhTrang = keyBoardInput.nextLine();
-            SachGK sachGiaoKhoa = new SachGK(maSach, ngayNhap, donGia, soLuong, nhaXuatBan, tinhTrang);
+            String tinhTrang = keyBoardInput.nextLine();           
            
-            themSachControl.themSach(sachGiaoKhoa);
+            themSachControl.themSach(maSach, ngayNhap, donGia, soLuong, nhaXuatBan, tinhTrang);
         } 
 		
 		else if ("TK".equalsIgnoreCase(loaiSach)) {
             screenOutput.print(thuePrompt);
             screenOutput.flush();
             double thue = keyBoardInput.nextDouble();
-            keyBoardInput.nextLine();
-            SachTK sachThamKhao = new SachTK(maSach, ngayNhap, donGia, soLuong, nhaXuatBan, thue);
+            keyBoardInput.nextLine();          
            
-            themSachControl.themSach(sachThamKhao);
+            themSachControl.themSach(maSach, ngayNhap, donGia, soLuong, nhaXuatBan, thue);
         } 
 		
 		else {
