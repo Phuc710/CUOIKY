@@ -72,7 +72,7 @@ public class ThongTinSachCUI {
             screenOutput.flush();
             String tinhTrang = keyBoardInput.nextLine();
             SachGK sachGiaoKhoa = new SachGK(maSach, ngayNhap, donGia, soLuong, nhaXuatBan, tinhTrang);
-            // Gọi phương thức thêm sách vào danh sách
+           
             themSachControl.themSach(sachGiaoKhoa);
         } 
 		
@@ -80,9 +80,9 @@ public class ThongTinSachCUI {
             screenOutput.print(thuePrompt);
             screenOutput.flush();
             double thue = keyBoardInput.nextDouble();
-            keyBoardInput.nextLine(); // Đọc dòng còn lại
+            keyBoardInput.nextLine();
             SachTK sachThamKhao = new SachTK(maSach, ngayNhap, donGia, soLuong, nhaXuatBan, thue);
-            // Gọi phương thức thêm sách vào danh sách
+           
             themSachControl.themSach(sachThamKhao);
         } 
 		

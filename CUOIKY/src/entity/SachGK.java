@@ -16,7 +16,7 @@ public class SachGK extends Sach {
 
 	@Override
 	public double tinhTien() {
-		if (tinhTrang.equalsIgnoreCase("mới")) {
+		if ("mới".equalsIgnoreCase(tinhTrang)) {
 			return soLuong * donGia;
 		} else {
 			return soLuong * donGia * 0.5;
