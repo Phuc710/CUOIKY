@@ -43,17 +43,24 @@ public class ThongTinSachCUI {
 		screenOutput.print(maSachPrompt);
 		screenOutput.flush();
 		String maSach = keyBoardInput.nextLine();
-
-		screenOutput.print(ngayNhapPrompt);
-	    screenOutput.flush();
-	    String ngayNhapStr = keyBoardInput.nextLine();
+	    //chuyển String thành java.util.Date	   
+	    boolean bay = false;
 	    Date ngayNhap = null;
-	    try {
-	        ngayNhap = simpleFormat.parse(ngayNhapStr);
-	    } catch (ParseException e) {
-	    	e.printStackTrace();
-	    }
+	    while (!bay) {
+	        screenOutput.print(ngayNhapPrompt);
+	        screenOutput.flush();
+	        String ngayNhapStr = keyBoardInput.nextLine();
 
+	        try {
+	            ngayNhap = simpleFormat.parse(ngayNhapStr);
+	            bay = true;
+	         // da hinh su dung ngoai le neu dung Exception
+	        } catch (ParseException e) {
+	            screenOutput.println("NGAY NHAP KHONG HOP LE !!! (dd/MM/yyyy)");
+	            screenOutput.flush();
+	        }
+	    }
+	    
 		screenOutput.print(donGiaPrompt);
 		screenOutput.flush();
 		double donGia = keyBoardInput.nextDouble();
@@ -75,18 +82,14 @@ public class ThongTinSachCUI {
             themSachControl.themSach(maSach, ngayNhap, donGia, soLuong, nhaXuatBan, tinhTrang);
         } 
 		
-		else if ("TK".equalsIgnoreCase(loaiSach)) {
+		if ("TK".equalsIgnoreCase(loaiSach)) {
             screenOutput.print(thuePrompt);
             screenOutput.flush();
             double thue = keyBoardInput.nextDouble();
             keyBoardInput.nextLine();          
            
             themSachControl.themSach(maSach, ngayNhap, donGia, soLuong, nhaXuatBan, thue);
-        } 
-		
-		else {
-            screenOutput.println("Loai sach khong hop le! Vui long nhap 'GK' hoac 'TK'.");
-        }
+        } 		
 		
 	}
 }

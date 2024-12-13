@@ -50,7 +50,7 @@ public class MenuCUI {
 				continue;
 			}
 			if ("exit".equalsIgnoreCase(command)) {
-				screenOutput.print("KET THUC");
+				screenOutput.print("KET THUC");screenOutput.flush();
 				break;
 			}
 

@@ -1,8 +1,8 @@
 package entity;
-
+import java.io.Serializable;
 import java.util.Date;
 import java.text.SimpleDateFormat;
-public abstract class Sach {
+public abstract class Sach implements Serializable{
 	// field
 	protected String maSach;
 	protected Date ngayNhap;

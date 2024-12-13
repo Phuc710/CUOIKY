@@ -3,6 +3,7 @@ package control;
 import java.util.Date;
 
 import database.ThemSachDAO;
+import database.ThemSachDAOFile;
 import entity.SachGK;
 import entity.Sach;
 import entity.SachTK;
@@ -12,13 +13,15 @@ public class ThemSachControl {
 	
 	private ThemSachDAO themSachDAO = null;
 	private ThongBaoThemSachCUI thongBaoThemSachCUI = null;
-	
+	private ThemSachDAOFile themsachdaofile = null;
 	public ThemSachControl() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	//setter xuat thong bao
-	
+	public void setthemsachDAOFILE(ThemSachDAOFile themsachdaofile) {
+		this.themsachdaofile = themsachdaofile;
+	}
 	public void setthongBaoThemSachCUI(ThongBaoThemSachCUI thongBaoThemSachCUI) {
 		this.thongBaoThemSachCUI = thongBaoThemSachCUI;
 	}
@@ -40,6 +43,7 @@ public class ThemSachControl {
 	// da hinh
 	public void doThemSach(Sach sach) {
 		themSachDAO.addSach(sach);
+		themsachdaofile.addSach(sach);
 		thongBaoThemSachCUI.inThongBao("THEM SACH THANH CONG !!!");		
 	}
 }
