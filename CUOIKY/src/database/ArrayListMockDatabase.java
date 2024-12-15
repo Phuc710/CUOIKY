@@ -18,9 +18,6 @@ public class ArrayListMockDatabase {
 		database.add(sach);
 	}
 	public static ArrayList<Sach> GetallSach(){
-		if (database == null) {
-	        initDatabase();
-	    }
 		return database;
 	}
 }

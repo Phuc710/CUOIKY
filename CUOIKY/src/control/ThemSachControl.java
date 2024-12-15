@@ -42,7 +42,7 @@ public class ThemSachControl {
 	
 	// da hinh
 	public void doThemSach(Sach sach) {
-		themSachDAO.addSach(sach);
+		//themSachDAO.addSach(sach);
 		themsachdaofile.addSach(sach);
 		thongBaoThemSachCUI.inThongBao("THEM SACH THANH CONG !!!");		
 	}

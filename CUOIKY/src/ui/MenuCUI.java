@@ -16,6 +16,7 @@ public class MenuCUI {
 	// constructor
 	public MenuCUI() {
 		// TODO Auto-generated constructor stub
+		screenOutput = new PrintWriter(System.out);
 	}
 	
 	public void setinlistsachcontrol(InListSachControl inlistsachcontrol) {

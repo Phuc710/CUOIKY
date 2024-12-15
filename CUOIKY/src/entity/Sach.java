@@ -4,6 +4,8 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 public abstract class Sach implements Serializable{
 	// field
+	
+	private static final long serialVersionUID = 2593189524794325047L;
 	protected String maSach;
 	protected Date ngayNhap;
 	protected double donGia;
