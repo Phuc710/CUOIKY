@@ -1,7 +1,8 @@
 package database;
+import control.ThemDAO;
 import entity.Sach;
 
-public class ThemSachDAO {
+public class ThemSachDAO extends ThemDAO {
 	public ThemSachDAO() {
 		// TODO Auto-generated constructor stub
 	}

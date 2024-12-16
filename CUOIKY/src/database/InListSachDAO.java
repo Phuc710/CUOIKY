@@ -1,12 +1,14 @@
 package database;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+import control.InDAO;
 import entity.Sach;
-public class InListSachDAO {
+
+public class InListSachDAO implements InDAO {
+	
 	public InListSachDAO() {
-		// TODO Auto-generated constructor stub
 	}
-	public ArrayList<Sach> GetallSach(){
-		return ArrayListMockDatabase.GetallSach();
-	}
+	public ArrayList<Sach> getAllSach(){
+		return ArrayListMockDatabase.getAllSach();
+	}	
 }

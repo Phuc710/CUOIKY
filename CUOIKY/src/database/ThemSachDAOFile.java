@@ -4,9 +4,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import control.ThemDAO;
 import entity.Sach;
 
-public class ThemSachDAOFile {
+public class ThemSachDAOFile extends ThemDAO {
 	
 	private File fileData = null;
 	private List<Sach> tempData = null;
@@ -23,13 +24,9 @@ public class ThemSachDAOFile {
 		try {
 			
 			readDataToListFromFile();
-			
 			//mở kênh đến file cần ghi đối tượng
-			
 			fileStream = new FileOutputStream(fileData);
-			
 			//dùng công cụ để ghi xuống file thông qua kênh fileStream
-			
 			os = new ObjectOutputStream(fileStream);
 			this.tempData.add(sach);
 			os.writeObject(tempData);
@@ -46,36 +43,33 @@ public class ThemSachDAOFile {
 	
 	}
 	private void readDataToListFromFile() {
-	    FileInputStream fileStream = null;
-	    ObjectInputStream oIS = null;
-
-	    try {
-	        // Kiểm tra file có tồn tại trước khi đọc
-	        if (!fileData.exists() || fileData.length() == 0) {
-	            tempData = new ArrayList<>();
-	            return; // Nếu file không tồn tại hoặc rỗng, kết thúc tại đây
-	        }
-
-	        fileStream = new FileInputStream(fileData);
-	        oIS = new ObjectInputStream(fileStream);
-
-	        // Đọc dữ liệu từ file
-	        tempData = (List<Sach>) oIS.readObject();
-
-	    } catch (EOFException e) {
-	        // File rỗng, khởi tạo danh sách mới
-	        tempData = new ArrayList<>();
-	    } catch (IOException | ClassNotFoundException e) {
-	        e.printStackTrace();
-	        tempData = new ArrayList<>(); // Đảm bảo danh sách không bị null
-	    } finally {
-	        try {
-	            if (oIS != null) oIS.close();
-	            if (fileStream != null) fileStream.close();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-	    }
+		FileInputStream fileStream = null;
+		ObjectInputStream oIS = null;
+		
+		try {
+			fileStream = new FileInputStream(fileData);
+			oIS = new ObjectInputStream(fileStream);
+			
+			this.tempData = (List<Sach>) oIS.readObject();
+			
+			oIS.close();
+			fileStream.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (EOFException eofException) {
+			eofException.printStackTrace();
+			if(tempData == null) {
+				tempData = new ArrayList<Sach>();
+			}
+		}
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 

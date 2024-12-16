@@ -11,23 +11,25 @@ import ui.ThongBaoThemSachCUI;
 
 public class ThemSachControl {
 	
-	private ThemSachDAO themSachDAO = null;
+	//private ThemSachDAO themSachDAO = null;
+	//private ThemSachDAOFile themsachdaofile = null;
 	private ThongBaoThemSachCUI thongBaoThemSachCUI = null;
-	private ThemSachDAOFile themsachdaofile = null;
+	private ThemDAO themDAO = null;
 	public ThemSachControl() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	//setter xuat thong bao
-	public void setthemsachDAOFILE(ThemSachDAOFile themsachdaofile) {
-		this.themsachdaofile = themsachdaofile;
-	}
+	
 	public void setthongBaoThemSachCUI(ThongBaoThemSachCUI thongBaoThemSachCUI) {
 		this.thongBaoThemSachCUI = thongBaoThemSachCUI;
 	}
 	
-	public ThemSachControl(ThemSachDAO themSachDAO) {
-		this.themSachDAO = themSachDAO;
+	public ThemSachControl(ThemDAO themDAO) {
+		this.themDAO = themDAO;
+	}
+	public void setthemsachDAOFILE(ThemDAO themDAO) {
+		this.themDAO = themDAO;
 	}
 	//sachGK
 	public void themSach(String maSach, Date ngayNhap, double donGia, int soLuong, String nhaxb, String tinhTrang) {
@@ -43,7 +45,7 @@ public class ThemSachControl {
 	// da hinh
 	public void doThemSach(Sach sach) {
 		//themSachDAO.addSach(sach);
-		themsachdaofile.addSach(sach);
+		themDAO.addSach(sach);
 		thongBaoThemSachCUI.inThongBao("THEM SACH THANH CONG !!!");		
 	}
 }

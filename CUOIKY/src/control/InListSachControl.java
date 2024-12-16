@@ -7,22 +7,23 @@ import entity.Sach;
 
 public class InListSachControl {
 	private InListSachCUI inlistsachcui= null;
-	private InListSachDAO inlistsachdao = null;
-	private InListSachDAOFile inlistsachdaofile = null;
+	private InDAO inDAO = null;
+	//private InListSachDAO inlistsachdao = null;
+	//private InListSachDAOFile inlistsachdaofile = null;
 	public InListSachControl() {
 		// TODO Auto-generated constructor stub
 	}
-	public InListSachControl(InListSachCUI inlistsachcui,InListSachDAO inlistsachdao ) {
+	public InListSachControl(InListSachCUI inlistsachcui,InDAO inDAO ) {
 		this.inlistsachcui = inlistsachcui;
-		this.inlistsachdao = inlistsachdao;
+		this.inDAO = inDAO;
 	}
 	
-	public void setInListSachDAO(InListSachDAOFile inlistsachdaofile) {
-		this.inlistsachdaofile = inlistsachdaofile;
+	public void setInListSachDAO(InDAO inDAO) {
+		this.inDAO = inDAO;
 	}
 	
 	public void getlistsach() {
-		ArrayList<Sach> listsach = inlistsachdaofile.GetallSach();
+		ArrayList<Sach> listsach = inDAO.getAllSach();
 		inlistsachcui.inlistsach(listsach);
 	}
 }

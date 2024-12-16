@@ -8,16 +8,17 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
+import control.InDAO;
 import entity.Sach;
 
-public class InListSachDAOFile {
+public class InListSachDAOFile implements InDAO {
 private File fileData = null;
 	
 	public InListSachDAOFile(String fileName) {
 		this.fileData = new File(fileName);
 	}
 	
-	public ArrayList<Sach> GetallSach() {
+	public ArrayList<Sach> getAllSach() {
 		FileInputStream fileStream = null;
 		ObjectInputStream oIS = null;
 		ArrayList<Sach> listSach = null;
