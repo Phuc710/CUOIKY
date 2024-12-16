@@ -13,10 +13,6 @@ import entity.Sach;
 public class InListSachDAOFile {
 private File fileData = null;
 	
-	public InListSachDAOFile() {
-		// TODO Auto-generated constructor stub
-	}
-	
 	public InListSachDAOFile(String fileName) {
 		this.fileData = new File(fileName);
 	}

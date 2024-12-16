@@ -1,7 +1,8 @@
 package entity;
 import java.io.Serializable;
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public abstract class Sach implements Serializable{
 	// field
 	
@@ -11,7 +12,7 @@ public abstract class Sach implements Serializable{
 	protected double donGia;
 	protected int soLuong;
 	protected String nhaxb;
-	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
+	
 
 	// constructor
 	public Sach() {
@@ -39,16 +40,14 @@ public abstract class Sach implements Serializable{
 	public double getDonGia() {
 		return donGia;
 	}
-
+	public String getNgayNhap() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        return formatter.format(ngayNhap);
+    }
 	@Override
 	public String toString() {
-	    return
-	            "maSach = " + maSach +
-	            ", ngayNhap = " + dateFormat.format(ngayNhap) +
-	            ", donGia = " + donGia + " VND"+
-	            ", soLuong = " + soLuong +
-	            ", nhaXuatBan = " + nhaxb          
-	            ;
+	    return "maSach = " + maSach +", ngayNhap = " + getNgayNhap() +", donGia = " + donGia + " VND"+", soLuong = " + soLuong +", nhaXuatBan = " + nhaxb;          
+	           
 	}
 
 }

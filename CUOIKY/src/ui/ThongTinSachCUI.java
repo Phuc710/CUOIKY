@@ -44,22 +44,19 @@ public class ThongTinSachCUI {
 		screenOutput.flush();
 		String maSach = keyBoardInput.nextLine();
 	    //chuyển String thành java.util.Date	   
-	    boolean bay = false;
-	    Date ngayNhap = null;
-	    while (!bay) {
-	        screenOutput.print(ngayNhapPrompt);
-	        screenOutput.flush();
-	        String ngayNhapStr = keyBoardInput.nextLine();
-
-	        try {
-	            ngayNhap = simpleFormat.parse(ngayNhapStr);
-	            bay = true;
-	         // da hinh su dung ngoai le neu dung Exception
-	        } catch (ParseException e) {
-	            screenOutput.println("NGAY NHAP KHONG HOP LE !!! (dd/MM/yyyy)");
-	            screenOutput.flush();
-	        }
-	    }
+	    
+	    
+		screenOutput.print(ngayNhapPrompt);
+		screenOutput.flush();
+		String ngayNhapStr = keyBoardInput.nextLine();
+		Date ngayNhap = null;
+		try {
+			ngayNhap = simpleFormat.parse(ngayNhapStr);
+			// da hinh su dung ngoai le neu dung Exception
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	    
 	    
 		screenOutput.print(donGiaPrompt);
 		screenOutput.flush();
