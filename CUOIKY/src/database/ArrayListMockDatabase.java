@@ -17,9 +17,16 @@ public class ArrayListMockDatabase {
 		database.add(new SachGK("SGK01", new Date(), 10000, 10, "ABC", "Moi"));
         database.add(new SachTK("STK01", new Date(), 20000, 5, "XYZ", 10));
 	}
+	
+	// add sach
 	public static void insertSach(Sach sach) {
 		database.add(sach);
 	}
+	//remove
+	public static void removeSach(String maSach) {
+        database.removeIf(sach -> sach.getMaSach().equalsIgnoreCase(maSach)); 
+    }
+	
 	public static ArrayList<Sach> getAllSach(){
 		return database;
 	}

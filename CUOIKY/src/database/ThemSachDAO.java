@@ -9,4 +9,5 @@ public class ThemSachDAO extends ThemDAO {
 	public void addSach(Sach sach) {
 		ArrayListMockDatabase.insertSach(sach);
 	}
+	
 }

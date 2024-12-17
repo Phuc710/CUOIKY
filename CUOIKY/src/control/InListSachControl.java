@@ -26,4 +26,5 @@ public class InListSachControl {
 		ArrayList<Sach> listsach = inDAO.getAllSach();
 		inlistsachcui.inlistsach(listsach);
 	}
+	
 }
