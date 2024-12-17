@@ -34,7 +34,7 @@ public class AppThuVien {
         ThemSachControl themSachControl = new ThemSachControl(themSachDAO);
         themSachControl.setthemsachDAOFILE(themsachdaofile);
         themSachControl.setthongBaoThemSachCUI(thongBaoThemSachCUI);
-        InListSachControl inListSachControl = new InListSachControl(inlistSachCUI, inlistsachdao);
+        InListSachControl inListSachControl = new InListSachControl(inlistsachdao,inlistSachCUI);
         inListSachControl.setInListSachDAO(inlistsachdaofile);
         
         

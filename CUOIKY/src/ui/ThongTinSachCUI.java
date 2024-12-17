@@ -24,7 +24,7 @@ public class ThongTinSachCUI {
 		screenOutput = _screenOutput;
 		keyBoardInput = _keyBoardInput;
 		themSachControl = _themSachControl;
-		loaiSachPrompt = "NHAP LOAI SACH [\"GK\" or \"TK\"]: ";
+		loaiSachPrompt = "NHAP LOAI SACH [GK/TK]: ";
 		maSachPrompt = "NHAP MA SACH: ";
 		ngayNhapPrompt = "NHAP NGAY NHAP (dd/MM/yyyy): ";
 		donGiaPrompt = "NHAP DON GIA: ";
@@ -44,19 +44,19 @@ public class ThongTinSachCUI {
 		screenOutput.flush();
 		String maSach = keyBoardInput.nextLine();
 	    //chuyển String thành java.util.Date	   
-	    
-	    
-		screenOutput.print(ngayNhapPrompt);
-		screenOutput.flush();
-		String ngayNhapStr = keyBoardInput.nextLine();
+
 		Date ngayNhap = null;
-		try {
-			ngayNhap = simpleFormat.parse(ngayNhapStr);
-			// da hinh su dung ngoai le neu dung Exception
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-	    
+		while (true) {
+	        try {
+	            screenOutput.print(ngayNhapPrompt);
+	            screenOutput.flush();
+	            String ngayNhapStr = keyBoardInput.nextLine();
+	            ngayNhap = simpleFormat.parse(ngayNhapStr);
+	            break;
+	        } catch (ParseException e) {// da hinh su dung ngoai le neu dung Exception
+	            screenOutput.println("Dinh dang ngay khong hop le! Vui long nhap lai (dd/MM/yyyy).");
+	        }
+	    }
 	    
 		screenOutput.print(donGiaPrompt);
 		screenOutput.flush();

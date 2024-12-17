@@ -44,8 +44,10 @@ public class ThemSachControl {
 	
 	// da hinh
 	public void doThemSach(Sach sach) {
-		//themSachDAO.addSach(sach);
-		themDAO.addSach(sach);
-		thongBaoThemSachCUI.inThongBao("THEM SACH THANH CONG !!!");		
+		
+			//themSachDAO.addSach(sach);
+	        themDAO.addSach(sach);
+	        thongBaoThemSachCUI.inThongBao("THEM SACH THANH CONG !!!");
+	    
 	}
 }

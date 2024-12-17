@@ -13,9 +13,9 @@ public class InListSachControl {
 	public InListSachControl() {
 		// TODO Auto-generated constructor stub
 	}
-	public InListSachControl(InListSachCUI inlistsachcui,InDAO inDAO ) {
-		this.inlistsachcui = inlistsachcui;
+	public InListSachControl(InDAO inDAO,InListSachCUI inlistsachcui) {
 		this.inDAO = inDAO;
+		this.inlistsachcui = inlistsachcui;
 	}
 	
 	public void setInListSachDAO(InDAO inDAO) {

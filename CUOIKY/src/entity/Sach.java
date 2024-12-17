@@ -41,6 +41,9 @@ public abstract class Sach implements Serializable{
 		return donGia;
 	}
 	public String getNgayNhap() {
+		if (ngayNhap == null) {
+	        return "DATE NULL";
+	    }
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         return formatter.format(ngayNhap);
     }

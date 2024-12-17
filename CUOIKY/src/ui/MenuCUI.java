@@ -27,7 +27,7 @@ public class MenuCUI {
 		this.keyBoardInput = keyBoardInput;
 		this.thongTinSachCUI = thongTinSachCUI;
 		prompt = "->";
-		command = " ";// = rong~
+		command = "";// = rong~
 	}
 
 	// functions
@@ -37,7 +37,7 @@ public class MenuCUI {
 		while (true) {
 			screenOutput.print(prompt);
 			screenOutput.flush();
-			command = keyBoardInput.nextLine().trim();
+			command = keyBoardInput.nextLine().trim().toUpperCase();
 			if ("help".equalsIgnoreCase(command)) {
 				help();
 				continue;
@@ -53,6 +53,9 @@ public class MenuCUI {
 			if ("exit".equalsIgnoreCase(command)) {
 				screenOutput.print("KET THUC");screenOutput.flush();
 				break;
+			}
+			else {
+				screenOutput.println("Lenh khong hop le. Vui long nhap lai.");
 			}
 
 		}

@@ -20,23 +20,28 @@ private File fileData = null;
 	
 	public ArrayList<Sach> getAllSach() {
 		FileInputStream fileStream = null;
-		ObjectInputStream oIS = null;
-		ArrayList<Sach> listSach = null;
+		ObjectInputStream oIS = null;		
+		ArrayList<Sach> listSach = new ArrayList<>();
 		
-		try {
+		if (!fileData.exists() || fileData.length() == 0) { // check tep co ton tai k
+	        return listSach;
+	    }
+		
+		try {			
 			fileStream = new FileInputStream(fileData);
 			oIS = new ObjectInputStream(fileStream);
 			listSach = (ArrayList<Sach>) oIS.readObject();
 			oIS.close();
 			fileStream.close();
-		} catch (FileNotFoundException e) {
+			
+		} catch (FileNotFoundException e) { // file k ton tai
 			
 			e.printStackTrace();
 		} catch (EOFException eofException) {
 			eofException.printStackTrace();
 			
 		}
-		catch (IOException e) {
+		catch (IOException e) { // loi doc du lieu
 			
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {

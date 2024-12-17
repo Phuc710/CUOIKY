@@ -12,12 +12,10 @@ public class ArrayListMockDatabase {
 	public static ArrayList<Sach> database = null;
 	
 	public static void initDatabase() {
-		Date ngayNhapGK = new Date(2000, 1, 29); 
-        Date ngayNhapTK = new Date(2003, 1, 20);
-		database = new ArrayList<Sach>();
-		insertSach(new SachGK("GK10", ngayNhapGK, 10000, 2, "Phucc", "moi"));
-		insertSach(new SachTK("TK10", ngayNhapTK, 15000, 1, "HAHA",10));
-		
+		// khoi tao du lieu nguyen thuy		
+		database = new ArrayList<Sach>();	
+		database.add(new SachGK("SGK01", new Date(), 10000, 10, "ABC", "Moi"));
+        database.add(new SachTK("STK01", new Date(), 20000, 5, "XYZ", 10));
 	}
 	public static void insertSach(Sach sach) {
 		database.add(sach);
