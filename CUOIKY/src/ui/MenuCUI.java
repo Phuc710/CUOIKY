@@ -56,6 +56,8 @@ public class MenuCUI {
 			}
 			else {
 				screenOutput.println("Lenh khong hop le. Vui long nhap lai.");
+				screenOutput.println("go lenh \"help\" de duoc ho tro!");
+				screenOutput.flush();
 			}
 
 		}

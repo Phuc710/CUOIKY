@@ -36,10 +36,11 @@ public class ThongTinSachCUI {
 	}
 
 	public void nhapThongTinSach() {
+				
 		screenOutput.print(loaiSachPrompt);
         screenOutput.flush();
-        String loaiSach = keyBoardInput.nextLine().toUpperCase();
-        
+        String loaiSach = keyBoardInput.nextLine().toUpperCase();      		
+		
 		screenOutput.print(maSachPrompt);
 		screenOutput.flush();
 		String maSach = keyBoardInput.nextLine();
@@ -70,7 +71,8 @@ public class ThongTinSachCUI {
 		screenOutput.print(nhaxbPrompt);
 		screenOutput.flush();
 		String nhaXuatBan = keyBoardInput.nextLine();
-
+		
+		
 		if ("GK".equalsIgnoreCase(loaiSach)) {
             screenOutput.print(tinhTrangPrompt);
             screenOutput.flush();
